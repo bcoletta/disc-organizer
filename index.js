@@ -8,16 +8,16 @@ let GROUPS = DATA.groups.map(g => new Group(g));
 let BEST_BOOK = null;
 
 const fillBook = (groups, name) => {
-  let BOOK = new Book({ pageSize: PAGE_SIZE, name });
-  BOOK.fill(groups);
+  let book = new Book({ pageSize: PAGE_SIZE, name });
+  book.fill(groups);
 
-  // console.log(BOOK.toStats());
+  // console.log(book.toStats());
 
   if (
     !BEST_BOOK ||
-    (BOOK.length <= BEST_BOOK.length && BOOK.unfilledPages < BEST_BOOK.unfilledPages)
+    (book.length <= BEST_BOOK.length && book.unfilledPages < BEST_BOOK.unfilledPages)
   ) {
-    BEST_BOOK = new Book({ ...BOOK });
+    BEST_BOOK = new Book({ ...book });
   }
 }
 

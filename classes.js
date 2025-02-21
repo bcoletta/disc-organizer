@@ -41,6 +41,7 @@ export class Book {
 
         if (remainder) {
           const nPWS = this.getNextPageWithPerfectSpace(remainder);
+
           if (nPWS > -1) {
             this.pages[nPWS].addGroup({ ...newGroup, count: remainder });
             newGroup.count -= remainder;
