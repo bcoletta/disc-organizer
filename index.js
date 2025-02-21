@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import DATA from './groups.json' with { type: 'json' };
 import { Book, Group } from './classes.js';
 
@@ -44,8 +45,8 @@ for (let i = 0; i < 1000; i++) {
   fillBook(tempGroups, `shuffle ${i+1}`);
 }
 
-console.log('=== BEST BOOK ===');
+console.log('==== BEST BOOK ====');
+console.log(BEST_BOOK.toStats());
+console.log('===================');
 
-console.log('\n', BEST_BOOK.toStats());
-
-console.log('\n', BEST_BOOK.toString());
+fs.writeFileSync('./output.txt', BEST_BOOK.toString());
