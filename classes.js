@@ -103,10 +103,10 @@ export class Book {
 
   toString() {
     const pageStrs = this.pages.map((page, i) => {
-      return `=== PAGE ${i+1} [${page.count}] ===\n${page.toString()}`;
+      return `=== PAGE ${i+1} ===\n${page.toString()}`;
     });
 
-    return pageStrs.join('\n');
+    return pageStrs.join('\n\n');
   }
 }
 
